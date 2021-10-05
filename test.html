@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+      integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <h2>oh whaaa!</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-lg-12" id="main">
+          <div class="card text-white bg-primary">
+            <div class="card-header">Resource Category 1</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $.getJSON('test.json', function (json) {
+        console.log(json); // this will show the info it in firebug console
+        $.each(json['users'], function (i, news) {
+          $('#main').append(
+            ' <div class="card">' +
+              '<div class="card-header">User ' +
+              news['userId'] +
+              '</div>' +
+              '<div class="card-body">' +
+              '<h5 class="card-title">' +
+              news['firstName'] +
+              ' ' +
+              news['lastName'] +
+              '</h5>' +
+              '<p class="card-text">' +
+              news['phoneNumber'] +
+              '<br/>' +
+              news['emailAddress'] +
+              '</p>' +
+              '</div>' +
+              '<div class="card-footer">' +
+              '<a href="#" class="card-link" target="_blank">' +
+              news['lastName'] +
+              ' ' +
+              news['emailAddress'] +
+              '<i class="fa fa-globe" aria-hidden="true"></i>' +
+              '</a>' +
+              '</div>' +
+              '</div>'
+          );
+
+          // console.log(
+          //   news['userId'] +
+          //     ' ' +
+          //     news['firstName'] +
+          //     ' ' +
+          //     news['lastName'] +
+          //     ' ' +
+          //     news['emailAddress']
+          // );
+        });
+      });
+
+      // $.each( obj, function( key, value ) {
+      //   alert( key + ": " + value );
+      // });
+
+      // quick search regex
+      var qsRegex;
+      var buttonFilter;
+
+      // init Isotope
+      var $grid = $('.container').isotope({
+        itemSelector: '.card',
+        layoutMode: 'fitRows',
+        filter: function () {
+          var $this = $(this);
+          var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
+          var buttonResult = buttonFilter ? $this.is(buttonFilter) : true;
+          return searchResult && buttonResult;
+        },
+      });
+
+      $('#filters').on('click', 'button', function () {
+        buttonFilter = $(this).attr('data-filter');
+        $grid.isotope();
+      });
+
+      // use value of search field to filter
+      var $quicksearch = $('#quicksearch').keyup(
+        debounce(function () {
+          qsRegex = new RegExp($quicksearch.val(), 'gi');
+          $grid.isotope();
+        })
+      );
+
+      // change is-checked class on buttons
+      $('.btn-group').each(function (i, buttonGroup) {
+        var $buttonGroup = $(buttonGroup);
+        $buttonGroup.on('click', 'button', function () {
+          $buttonGroup.find('.is-checked').removeClass('is-checked');
+          $(this).addClass('is-checked');
+        });
+      });
+
+      // debounce so filtering doesn't happen every millisecond
+      function debounce(fn, threshold) {
+        var timeout;
+        return function debounced() {
+          if (timeout) {
+            clearTimeout(timeout);
+          }
+          function delayed() {
+            fn();
+            timeout = null;
+          }
+          setTimeout(delayed, threshold || 100);
+        };
+      }
+    </script>
+  </body>
+</html>
