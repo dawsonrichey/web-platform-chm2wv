@@ -325,7 +325,6 @@
         </div>
       </div>
     </div>
-    <!-- <button onclick="myFunction()">Try it</button> -->
 
     <script>
       const group = [
@@ -338,9 +337,6 @@
         'bg-warning',
       ];
 
-      // function news() {
-      //   return random;
-      // }
       function myFunction() {
         // console.log(random);
         // console.log(group[random]);
@@ -348,33 +344,13 @@
         //   var y = document.getElementsByTagName("P");
         var i;
         for (i = 0; i < x.length; i++) {
-          // news();
           //  y[i].classList.add("red");
           const random = Math.floor(Math.random() * group.length);
           x[i].classList.add(group[random]);
         }
-
-        // var x = document.getElementsByClassName('card');
-        // //   var y = document.getElementsByTagName("P");
-        // var i;
-        // for (i = 0; i < x.length; i++) {
-        //   //  y[i].classList.add("red");
-        //   x[i].classList.add(group[random]);
-        // }
       }
     </script>
 
-    <!-- Backgrounds
-
-.bg-primary
-.bg-secondary
-.bg-success
-.bg-danger
-.bg-info
-.bg-dark
-.bg-warning
-
--->
     <!-- partial -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
