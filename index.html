@@ -19,28 +19,6 @@
 
     <div id="myDIV">This is a DIV element.</div>
 
-    <script>
-      function myFunction() {
-        const group = [
-          '.bg-primary',
-          '.bg-secondary',
-          '.bg-success',
-          '.bg-danger',
-          '.bg-info',
-          '.bg-dark',
-          '.bg-warning',
-        ];
-        // const months = ["January", "February", "March", "April", "May", "June", "July"];
-
-        const random = Math.floor(Math.random() * group.length);
-        console.log(random);
-        console.log(group[random]);
-
-        var element = document.getElementById('myDIV');
-        element.classList.add(group[random]);
-      }
-    </script>
-
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
@@ -346,6 +324,27 @@
         </div>
       </div>
     </div>
+    <script>
+      function myFunction() {
+        const group = [
+          'bg-primary',
+          'bg-secondary',
+          'bg-success',
+          'bg-danger',
+          'bg-info',
+          'bg-dark',
+          'bg-warning',
+        ];
+        // const months = ["January", "February", "March", "April", "May", "June", "July"];
+
+        const random = Math.floor(Math.random() * group.length);
+        console.log(random);
+        console.log(group[random]);
+        var element = document.getElementsByClassName('card');
+        // var element = document.getElementById('addHere');
+        element.classList.add(group[random]);
+      }
+    </script>
 
     <!-- Backgrounds
 
