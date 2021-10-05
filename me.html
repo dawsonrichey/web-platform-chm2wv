@@ -11,6 +11,7 @@
   </head>
   <body>
     <h2>oh whaaa!</h2>
+    <ol></ol>
     <div class="card text-white bg-primary">
       <div class="card-header">Resource Category 1</div>
       <div class="card-body">
@@ -28,15 +29,26 @@
       $.getJSON('test.json', function (json) {
         console.log(json); // this will show the info it in firebug console
         $.each(json['users'], function (i, news) {
-          console.log(
-            news['userId'] +
-              ' ' +
+          $('ol').append(
+            '<li>' +
+              // news['userId'] +
+              // ' ' +
               news['firstName'] +
               ' ' +
               news['lastName'] +
               ' ' +
-              news['emailAddress']
+              news['emailAddress'] +
+              '</li>'
           );
+          // console.log(
+          //   news['userId'] +
+          //     ' ' +
+          //     news['firstName'] +
+          //     ' ' +
+          //     news['lastName'] +
+          //     ' ' +
+          //     news['emailAddress']
+          // );
         });
       });
 
