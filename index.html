@@ -1,24 +1,337 @@
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <script src="./script.js"></script> -->
-    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <title>
+      CodePen - Bootstrap 4 - Filtering Cards with Isotope Search Function
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="custom.css" />
   </head>
   <body>
-    <input id="getInfo" type="text" placeholder="here" value="" />
-    <button id="myButton" onclick="firstFunc()">Trigger Function</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h3>
+            <strong>Filter it!</strong><br />
+            <small class="text-muted"
+              >Search for any number between 1 - 6</small
+            >
+          </h3>
+        </div>
+        <div class="col-lg-6">
+          <input
+            type="text"
+            class="form-control"
+            id="quicksearch"
+            aria-describedby="filterIt"
+            placeholder="Search"
+          />
+        </div>
+      </div>
 
-    <!-- <h1>Hello there!</h1> -->
-    <!-- <a href="./me.html">My other page</a>  -->
-    <!-- <script src="./script.js"></script> -->
+      <div class="row">
+        <div class="col-sm-12 col-lg-12">
+          <div class="card text-white bg-primary">
+            <div class="card-header">Resource Category 1</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
 
-    <script type="text/JavaScript">
-      console.log('heeee');
+          <div class="card text-white bg-secondary">
+            <div class="card-header">Resource Category 2</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
 
+          <div class="card text-white bg-warning">
+            <div class="card-header">Resource Category 3</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
 
-      function firstFunc(){
-        console.log('firstFunc ran');
-      }
-    </script>
+          <div class="card text-white bg-danger">
+            <div class="card-header">Resource Category 4</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info">
+            <div class="card-header">Resource Category 4</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-dark">
+            <div class="card-header">Resource Category 5</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-warning">
+            <div class="card-header">Resource Category 2</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-warning">
+            <div class="card-header">Resource Category6</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-danger">
+            <div class="card-header">Resource Category 1</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info">
+            <div class="card-header">Resource Category 3</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-dark">
+            <div class="card-header">Resource Category 6</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-primary">
+            <div class="card-header">Resource Category 2</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-dark">
+            <div class="card-header">Resource Category 6</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-success">
+            <div class="card-header">Resource Category 4</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-secondary">
+            <div class="card-header">Resource Category 2</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-danger">
+            <div class="card-header">Resource Category 1</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-primary">
+            <div class="card-header">Resource Category 3</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info">
+            <div class="card-header">Resource Category 6</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-warning">
+            <div class="card-header">Resource Category 5</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card text-white bg-primary">
+            <div class="card-header">Resource Category 3</div>
+            <div class="card-body">
+              <h5 class="card-title">Resource Title</h5>
+              <p class="card-text">Resource Description</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="card-link" target="_blank"
+                >View Site
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backgrounds
+
+.bg-primary
+.bg-secondary
+.bg-success
+.bg-danger
+.bg-info
+.bg-dark
+.bg-warning
+
+-->
+    <!-- partial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script src="https://use.fontawesome.com/e8927eb029.js"></script>
+    <script src="custom.js"></script>
   </body>
 </html>
