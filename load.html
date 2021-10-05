@@ -129,11 +129,12 @@
         console.log(json['users']); // this will show the info it in firebug console
         let people = json['users'];
         console.log(people[0]);
-        console.log(people.length);
+        console.log(people[0]['firstName']);
+        // console.log(people['firstName']);
         let total = people.length;
         i = 0;
         $.each(people[i], function(key, value){
-      
+
           console.log(key + ' ' + value);
           // i++;
  
