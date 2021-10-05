@@ -10,7 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css"
     />
-    <link rel="stylesheet" href="custom.css" />
+    <link rel="stylesheet" href="./custom.css" />
   </head>
   <body>
     <p>
@@ -26,10 +26,7 @@
         <div class="col-lg-6">
           <h3>
             <strong>Filter it!</strong><br />
-            <small class="text-muted"
-              >Search all content <br />
-              Header, Body and Footer</small
-            >
+            <small class="text-muted">Search all content - Header, Body and Footer</small>
           </h3>
         </div>
         <div class="col-lg-6">
@@ -57,7 +54,7 @@
                 <i class="fa fa-globe" aria-hidden="true"></i>
               </a>
             </div> -->
-          </div>
+     
 
           <div class="card text-white">
             <div class="card-header">Resource Category 3</div>
@@ -100,6 +97,7 @@
               </a>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -127,8 +125,20 @@
           x[i].classList.add(group[random]);
         }
       }
-      // $.getJSON('db.json', function (json) {
-      //   console.log(json); // this will show the info it in firebug console
+      $.getJSON('db2.json', function (json) {
+        console.log(json['users']); // this will show the info it in firebug console
+        let people = json['users'];
+        console.log(people[0]);
+        console.log(people.length);
+        let total = people.length;
+        i = 0;
+        $.each(people[i], function(key, value){
+      
+          console.log(key + ' ' + value);
+          // i++;
+ 
+        })
+      });
       //   $.each(json['users'], function (i, info) {
       // $('.row').append(
       //         '<div class="card text-white">' +
@@ -145,38 +155,38 @@
       //         '</div>' +
       //       '</div>';
       // );
-
-      $.getJSON('db.json', function (json) {
-        console.log(json); // this will show the info it in firebug console
-        $.each(json['users'], function (i, info) {
-          $('#goHere').append(
-            '<div class="card text-white"><div class="card-header">' +
-              info['userId'] +
-              ' ' +
-              info['firstName'] +
-              ' ' +
-              info['lastName'] +
-              '</div><div class="card-body"><h5 class="card-title">' +
-              info['card-title'] +
-              ' ' +
-              '</h5><p class="card-text">' +
-              info['card-text'] +
-              ' ' +
-              '</p></div><div class="card-footer"><a href="#" class="card-link" target="_blank">' +
-              info['card-footer'] +
-              ' ' +
-              '<i class="' +
-              info['card-icon'] +
-              '" aria-hidden="true"></i></a></div></div>'
-          );
-        });
-      });
+      //         });
+      // $.getJSON('db2.json', function (json) {
+      //   console.log(json['users'][0]); // this will show the info it in firebug console
+      //   $.each(json['users'], function (i, info) {
+      //     console.log(json['users'][i]);
+      //     $('#goHere').append('<div class="card text-white"><div class="card-header">' +
+      //         json{'users']+
+      //         ' ' +
+      //         info['firstName'] +
+      //         ' ' +
+      //         info['lastName'] +
+      //         '</div><div class="card-body"><h5 class="card-title">' +
+      //         info['card-title'] +
+      //         ' ' +
+      //         '</h5><p class="card-text">' +
+      //         info['card-text'] +
+      //         ' ' +
+      //         '</p></div><div class="card-footer"><a href="#" class="card-link" target="_blank">' +
+      //         info['card-footer'] +
+      //         ' ' +
+      //         '<i class="' +
+      //         info['card-icon'] +
+      //         '" aria-hidden="true"></i></a></div></div></div>'
+          // );
+        // });
+      // });
     </script>
 
     <!-- partial -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
     <script src="https://use.fontawesome.com/e8927eb029.js"></script>
-    <script src="custom.js"></script>
+    <script src="./custom.js"></script>
   </body>
 </html>
