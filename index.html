@@ -11,6 +11,36 @@
     <link rel="stylesheet" href="custom.css" />
   </head>
   <body>
+    <p>
+      Click the "Try it" button to add the "mystyle" class to the DIV element:
+    </p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <div id="myDIV">This is a DIV element.</div>
+
+    <script>
+      function myFunction() {
+        const group = [
+          '.bg-primary',
+          '.bg-secondary',
+          '.bg-success',
+          '.bg-danger',
+          '.bg-info',
+          '.bg-dark',
+          '.bg-warning',
+        ];
+        // const months = ["January", "February", "March", "April", "May", "June", "July"];
+
+        const random = Math.floor(Math.random() * group.length);
+        console.log(random);
+        console.log(group[random]);
+
+        var element = document.getElementById('myDIV');
+        element.classList.add(group[random]);
+      }
+    </script>
+
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
@@ -34,7 +64,7 @@
 
       <div class="row">
         <div class="col-sm-12 col-lg-12">
-          <div class="card text-white bg-primary">
+          <div id="addHere" class="card text-whitejs">
             <div class="card-header">Resource Category 1</div>
             <div class="card-body">
               <h5 class="card-title">Resource Title</h5>
